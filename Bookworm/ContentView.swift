@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
    
     @AppStorage("notes") private var notes = ""
+    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student>
 
    var body: some View {
        NavigationView {
-           TextEditor(text: $notes)
-               .navigationTitle("Notes")
-               .padding()
+           VStack {
+               List(students) { student in
+                   Text(student.name ?? "Unknown")
+               }
+           }
+           .navigationTitle("Core Data")
        }
    }
 }
