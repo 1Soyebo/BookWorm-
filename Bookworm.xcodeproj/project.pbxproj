@@ -14,6 +14,7 @@
 		2B6D0ABA28630191005F0F8A /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D0AB928630191005F0F8A /* PushButton.swift */; };
 		2B6D0ABF2863544F005F0F8A /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D0ABD2863544F005F0F8A /* Bookworm.xcdatamodeld */; };
 		2B6D0AC1286354AB005F0F8A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D0AC0286354AB005F0F8A /* DataController.swift */; };
+		2B6D0AC328635CA5005F0F8A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D0AC228635CA5005F0F8A /* AddBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2B6D0AB928630191005F0F8A /* PushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
 		2B6D0ABE2863544F005F0F8A /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
 		2B6D0AC0286354AB005F0F8A /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		2B6D0AC228635CA5005F0F8A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				2B6D0AB928630191005F0F8A /* PushButton.swift */,
 				2B6D0ABD2863544F005F0F8A /* Bookworm.xcdatamodeld */,
 				2B6D0AC0286354AB005F0F8A /* DataController.swift */,
+				2B6D0AC228635CA5005F0F8A /* AddBookView.swift */,
 			);
 			path = Bookworm;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6D0AC1286354AB005F0F8A /* DataController.swift in Sources */,
+				2B6D0AC328635CA5005F0F8A /* AddBookView.swift in Sources */,
 				2B6D0AAE2862922F005F0F8A /* ContentView.swift in Sources */,
 				2B6D0ABF2863544F005F0F8A /* Bookworm.xcdatamodeld in Sources */,
 				2B6D0AAC2862922F005F0F8A /* BookwormApp.swift in Sources */,

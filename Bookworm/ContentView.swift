@@ -9,33 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
    
-    @AppStorage("notes") private var notes = ""
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student>
+    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
 
-   var body: some View {
+    @State private var showingAddScreen = false
+    
+    var body: some View {
+           
        NavigationView {
-           VStack {
-               List(students) { student in
-                   Text(student.name ?? "Unknown")
-               }
-               
-               Button("Add") {
-                   let firstNames = ["Ginny", "Harry", "Hermione", "Luna", "Ron"]
-                   let lastNames = ["Granger", "Lovegood", "Potter", "Weasley"]
-
-                   let chosenFirstName = firstNames.randomElement()!
-                   let chosenLastName = lastNames.randomElement()!
-
-                   let student = Student(context: moc)
-                   student.id = UUID()
-                   student.name = "\(chosenFirstName) \(chosenLastName)"
-                   try? moc.save()
-               }
+           VStack{
+               Text("Count: \(books.count)")
+                   .padding(.top)
+               Spacer()
            }
-           .navigationTitle("Core Data")
+           
+               .navigationTitle("Bookworm")
+               .toolbar {
+                   ToolbarItem(placement: .navigationBarTrailing) {
+                       Button {
+                           showingAddScreen.toggle()
+                       } label: {
+                           Label("Add Book", systemImage: "plus")
+                       }
+                   }
+               }
+               .sheet(isPresented: $showingAddScreen) {
+                   AddBookView()
+               }
        }
-   }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
