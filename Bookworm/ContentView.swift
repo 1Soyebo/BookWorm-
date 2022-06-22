@@ -18,9 +18,25 @@ struct ContentView: View {
            
        NavigationView {
            VStack{
-               Text("Count: \(books.count)")
-                   .padding(.top)
-               Spacer()
+               List {
+                   ForEach(books) { book in
+                       NavigationLink {
+                           DetailView(book: book)
+                       } label: {
+                           HStack {
+                               EmojiRatingView(rating: book.rating)
+                                   .font(.largeTitle)
+
+                               VStack(alignment: .leading) {
+                                   Text(book.title ?? "Unknown Title")
+                                       .font(.headline)
+                                   Text(book.author ?? "Unknown Author")
+                                       .foregroundColor(.secondary)
+                               }
+                           }
+                       }
+                   }
+               }
            }
            
                .navigationTitle("Bookworm")
