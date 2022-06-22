@@ -37,6 +37,9 @@ struct DetailView: View {
 
             Text(book.review ?? "No review")
                 .padding()
+            
+            Text(showFormattedDate(date: book.date))
+                .padding()
 
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
@@ -65,6 +68,13 @@ struct DetailView: View {
         // try? moc.save()
         dismiss()
     }
+    
+    func showFormattedDate(date: Date?) -> String{
+        guard let date = date else {return ""}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: date)
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {
@@ -77,6 +87,7 @@ struct DetailView_Previews: PreviewProvider {
     book.genre = "Fantasy"
     book.rating = 4
     book.review = "This was a great book; I really enjoyed it."
+    book.date = Date.now
 
     return NavigationView {DetailView(book: book)}
     }
